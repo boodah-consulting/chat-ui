@@ -8,8 +8,8 @@
         :key="`${message}-${index}`"
         :index="index"
         >
-        <span class="user">
-          {{ message.user }}:
+        <span class="handle">
+          {{ message.handle }}:
         </span>
         <span class="message">
           {{ message.message }}
@@ -20,29 +20,13 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
+
 export default {
   name: "Messages",
-  data () {
-    return {
-      messages: [ 
-        {
-          user: 'baphled',
-          message: 'Some cool message',
-        },
-        {
-          user: 'baphled',
-          message: 'Hmm, this is kinda interesting',
-        },
-        {
-          user: 'baphled',
-          message: 'This could work, but lets see how it goes :thinking:',
-        },
-        {
-          user: 'baphled',
-          message: 'This is some really long message that should just follow nicely regardless of how lengthy it is. I wonder if this would be ideal for when people write monologs :thinking:',
-        },
-      ]
-    }
+  computed: {
+    ...mapGetters("messenger", ["messages"])
+
   }
 };
 </script>
