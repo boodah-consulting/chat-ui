@@ -8,8 +8,8 @@
       class="flex-1 self-center justify-center max-w-xl md:max-w-2xl xl:max-w-3xl mx-auto"
       >
       <Messages />
-      <NameInput v-if="!name"/>
-      <CommentInput v-if="name" />
+      <NameInput v-if="!handle" />
+      <CommentInput v-if="handle" />
     </div>
   </section>
 </template>
@@ -19,6 +19,8 @@ import Messages from "@/components/Messages";
 import CommentInput from "@/components/CommentInput";
 import NameInput from "@/components/NameInput";
 
+import { mapGetters } from "vuex";
+
 export default {
   name: "Messenger",
   components: {
@@ -26,10 +28,8 @@ export default {
     NameInput,
     CommentInput
   },
-  data () {
-    return {
-      name: null
-    }
+  computed: {
+    ...mapGetters("messenger", ["handle"])
   }
 };
 </script>
