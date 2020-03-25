@@ -1,6 +1,12 @@
 <template>
-  <section id="messenger" class="m-auto flex flex-wrap items-stretch m-auto h-screen">
-    <div class="h-full m-auto">
+  <section
+    id="messenger"
+      class="flex items-stretch h-screen"
+    >
+    <div
+      id="chat-ui"
+      class="flex-1 self-center justify-center max-w-xl md:max-w-2xl xl:max-w-3xl mx-auto"
+      >
       <Messages />
       <CommentInput />
     </div>
@@ -19,3 +25,9 @@ export default {
   }
 };
 </script>
+
+<style>
+#chat-ui {
+  height: 80%
+}
+</style>

@@ -1,5 +1,5 @@
 <template>
-  <div id="messsages" class="h-100 box-border rounded bg-white text-left text-black">
+  <div id="messsages" class="h-full box-border rounded bg-white text-left text-black">
     <ul class="p-2">
       <li
         v-for="message in messages"
