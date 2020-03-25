@@ -1,11 +1,16 @@
 <template>
-  <div id="messsages" class="h-full box-border rounded bg-white text-left text-black">
-    <ul class="p-2">
+  <div id="messages" class="h-full box-border rounded bg-white text-left text-black">
+    <ul 
+      class="p-2"
+      >
       <li
-        v-for="message in messages"
-        :key="message"
+        v-for="(message, index) in messages"
+        :key="`${message}-${index}`"
+        :index="index"
         >
-        <span class="user">{{ message.user }}:</span>
+        <span class="user">
+          {{ message.user }}:
+        </span>
         <span class="message">
           {{ message.message }}
         </span>
