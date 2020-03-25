@@ -19,7 +19,7 @@ import Messages from "@/components/Messages";
 import CommentInput from "@/components/CommentInput";
 import NameInput from "@/components/NameInput";
 
-import { mapGetters } from "vuex";
+import { mapGetters, mapActions } from "vuex";
 
 export default {
   name: "Messenger",
@@ -28,8 +28,14 @@ export default {
     NameInput,
     CommentInput
   },
+  methods: {
+    ...mapActions("messenger", ["initialiseMessages"])
+  },
   computed: {
     ...mapGetters("messenger", ["handle"])
+  },
+  mounted() {
+    this.initialiseMessages();
   }
 };
 </script>

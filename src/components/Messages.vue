@@ -2,6 +2,7 @@
   <div id="messages" class="h-full box-border rounded bg-white text-left text-black">
     <ul 
       class="p-2"
+      v-model="messages"
       >
       <li
         v-for="(message, index) in messages"
